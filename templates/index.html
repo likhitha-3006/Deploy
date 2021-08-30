@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Customer Segmentation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+
+  p {font-size: 16px;}
+  label,input {
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+  }
+  h2{
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .margin {margin-bottom: 45px;}
+
+  .bg-1 { 
+    background-color:black ; /* Green */
+    
+    color: white;
+    text-align: left;
+
+  }
+  .row{
+    background-image: url("https://media.giphy.com/media/xUPGcshrKRahaS8ef6/giphy.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    min-height: 200px;
+
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .news_content{
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+
+  .col-md-8{
+    text-align: center;
+    color: rgb(247, 243, 243);
+    text-shadow: 2px;
+    font-weight: bold;
+  }
+
+  .btn{
+    background-color: rgb(70, 68, 190);
+    margin:auto;
+    align-self: center;
+    border: 3px rgb(95, 92, 92);
+    border-style:solid ;
+    border-radius: 5px;
+    font-size: 0.8em;
+
+  }
+
+  .btn:hover{
+    background-color: rgb(11, 41, 105);
+    border: white 3px;
+    
+    border-style:solid;
+  }
+  
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  .navbar-header{
+    min-width: 100%;
+  }
+
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default bg-4">
+  <div class="container">
+    <div class="navbar-header">
+      
+      <h2>Customer Segmentation</h2>
+    </div>
+    
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"><p>This intelligent system is able to group customers as Best,Average and Wrost</p></div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+  <form action="{{ url_for('predict')}}"method="post">
+    <div class="form-group">
+      
+      
+    </div>
+
+      <div style ="margin-left: 30%;" >
+
+        <div>
+        <label  class="" for="tv">R Score</label>
+        <input style="color: #4c12eb;width : 50%" type="number" id="Rnumber" name="Rnumber" min=1 max=3>
+        </br></div>
+      <div>
+      <label  class="" for="tv">F Score</label>
+      <input style="color: #4c12eb;width : 50%" type="number" id="Fnumber" name="Fnumber" min=1 max=3></br></div>
+      <div>
+      <label  class="" for="tv">M Score</label>
+      <input style="color: #4c12eb;width: 50%;margin-bottom: 15px;" type="number" id="Mnumber" name="Mnumber" min=1 max=3></br></div></div>
+   
+
+
+
+
+    
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+  </form>
+  {{ prediction_text }}
+</div>
+<div class="col-md-4"></div>
+</div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <!-- <p>Thanks to <a href=""></a></p> -->
+  <p class='footer-description'>Made with ❤️ by Likhitha Pinisetti.</p>
+  <div class="contact" >
+    <a target="_blank" href="https://github.com/likhitha-3006"><i class="fab fa-github fa-lg contact-icon" style="color:blanchedalmond !important"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/likhitha-pinisetti/"><i class="fab fa-linkedin fa-lg contact-icon" style="color:blanchedalmond !important"></i></a>
+</div>
+   
+  
+</footer>
+
+</body>
+</html>
